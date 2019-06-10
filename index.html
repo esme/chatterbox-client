@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="client/styles/styles.css">
     <script src="node_modules/jquery/dist/jquery.js"></script>
     <script src="node_modules/underscore/underscore.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.js'></script>
     <script>
       // DO NOT MODIFY THIS CODE
       if (!/(&|\?)username=/.test(window.location.search)) {
@@ -27,12 +28,14 @@
       <div class="spinner"><img src="client/images/spiffygif_46x46.gif"></div>
       <div id="rooms">
         Room:
-        <select></select>
+        <select id='roomsList'>
+          <option value="All">All</option>
+        </select>
         <button>Add Room</button>
       </div>
-      <form action="#" id="send" method="post">
+      <form action="" id="send" method="post">
         <input type="text" name="message" id="message"/>
-        <input type="submit" name="submit" class="submit"/>
+        <input type="submit" class="submit" name='submit' value='Submit' id='messageSubmit'/>
       </form>
     </div>
     <div id="chats"></div>

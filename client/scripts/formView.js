@@ -1,16 +1,22 @@
 var FormView = {
 
-  $form: $('form'),
+  $form: $('#send'),
 
   initialize: function() {
     FormView.$form.on('submit', FormView.handleSubmit);
   },
 
   handleSubmit: function(event) {
-    // Stop the browser from submitting the form
+
+    var $message = $('#message').val()
+    var username = window.location.href.match(/(?<=username=).*$/g);
+    if(username !== undefined) { username = username[0]; }
+    var roomname = $( "select option:selected" )[0].value;
+    var messageObj = new Messages(username, $message, roomname); 
+    console.log(messageObj);
+    Parse.create(messageObj);
+    $('#message').val('');
     event.preventDefault();
-    
-    console.log('click!');
   },
 
   setStatus: function(active) {
