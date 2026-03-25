@@ -12,6 +12,7 @@
   },
   "devDependencies": {},
   "scripts": {
+    "start": "open index.html",
     "test": "open ./SpecRunner.html"
   },
   "author": "Hack Reactor <curriculum.team@hackreactor.com>",
